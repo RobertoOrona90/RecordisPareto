@@ -6,6 +6,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { LoginComponent } from './component/login/login.component';
+import { counterReducer } from './counter.reducer';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { LoginComponent } from './component/login/login.component';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({ count: counterReducer }, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
